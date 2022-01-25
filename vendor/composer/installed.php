@@ -1,22 +1,22 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => 'e721b38e885b2310eea6747126ee9e7e2cd8ee71',
         'name' => 'leonardofg5/ecommerce',
         'dev' => true,
     ),
     'versions' => array(
         'leonardofg5/ecommerce' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => 'e721b38e885b2310eea6747126ee9e7e2cd8ee71',
             'dev_requirement' => false,
         ),
         'phpmailer/phpmailer' => array(
