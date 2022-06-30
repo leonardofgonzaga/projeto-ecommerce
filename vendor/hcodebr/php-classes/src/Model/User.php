@@ -11,6 +11,8 @@ class User extends Model {
 
 	const SESSION = "User";
 	const SECRET = "HcodePhp7_Secret";
+	const ERROR = "UserError";
+	const ERROR_REGISTER = "UserErrorRegister";
 
 	public static function getFromSession() 
 	{
@@ -273,6 +275,30 @@ class User extends Model {
  			":iduser"=>$this->getiduser()
  		));
  	}
+
+	public static function setError($msg) 
+	{
+		$_SESSION[User::ERROR] = $msg;
+	}
+
+	public static function getError() 
+	{
+		$msg = (isset($_SESSION[User::ERROR]) && $_SESSION[User::ERROR]) ? $_SESSION[User::ERROR] : '';
+
+		User::clearError();
+
+		return $msg;
+	}
+	
+	public static function clearError() 
+	{
+		$_SESSION[User::ERROR] = NULL;
+	}
+
+	public static function setErrorRegister($msg)
+	{
+		$_SESSION[User::ERROR_REGISTER] = $msg;
+	}
 
 }
 

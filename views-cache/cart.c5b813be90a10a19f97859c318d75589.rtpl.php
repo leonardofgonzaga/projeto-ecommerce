@@ -106,7 +106,13 @@
                                             <tr class="shipping">
                                                 <th>Frete</th>
                                                 <td>
-                                                    R$<?php echo formatPrice($cart["vlfreight"]); ?> <?php if( $cart["nrdays"] > 0 ){ ?><small>prazo de <?php echo htmlspecialchars( $cart["nrdays"], ENT_COMPAT, 'UTF-8', FALSE ); ?> dia(s)</small><?php } ?>
+                                                    <?php if( $cart["vlfreight"] !== null ){ ?> R$<?php echo formatPrice($cart["vlfreight"]); ?> <?php }else{ ?> R$0,00 <?php } ?>
+
+                                                        
+                                                    <?php if( $cart["nrdays"] > 0 ){ ?>
+
+                                                        <small>prazo de <?php echo htmlspecialchars( $cart["nrdays"], ENT_COMPAT, 'UTF-8', FALSE ); ?> dia(s)</small>
+                                                    <?php } ?>
 
                                                 </td>
                                             </tr>
