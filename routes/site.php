@@ -151,7 +151,7 @@ $app->get("/checkout", function() {
 	$page->setTpl("checkout", [
 		'cart'=>$cart->getValues(),
 		'address'=>$address->getValues()
-	]);
+	] );
 
 });
 
@@ -178,7 +178,7 @@ $app->post("/login", function() {
 	}	
 
 	header("Location: /checkout");
-		exit;
+	exit;
 
 });
 

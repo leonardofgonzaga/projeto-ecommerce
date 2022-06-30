@@ -61,8 +61,12 @@ class User extends Model {
 
 		$sql = new Sql();
 
-		$results = $sql->select("SELECT * FROM tb_users WHERE deslogin = :LOGIN", array(
-			":LOGIN"=>$login
+		$results = $sql->select("
+			SELECT * FROM tb_users a 
+			INNER JOIN tb_persons b 
+			ON a.idperson = b.idperson
+			WHERE a.deslogin = :LOGIN", array(
+				":LOGIN"=>$login
 		));
 
 		if (count($results) === 0 )
@@ -90,11 +94,16 @@ class User extends Model {
 
 	public static function verifyLogin($inadmin = true) 
 	{
-		if (User::checkLogin($inadmin)) 
-		{
-			header("Location: /admin/login");
-			exit;
+		if (!User::checkLogin($inadmin)) {
+
+			if ($inadmin) {
+				header("Location: /admin/login");
+			} else {
+				header("Location: /login");
+			}
+
 		}
+		exit;
 	}
 
 	public static function logout()
