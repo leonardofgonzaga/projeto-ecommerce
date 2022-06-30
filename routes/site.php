@@ -150,8 +150,8 @@ $app->get("/checkout", function() {
 
 	$page->setTpl("checkout", [
 		'cart'=>$cart->getValues(),
-		'address'=>$address->getValues()
-	] );
+		'adress'=>$address->getValues()
+	]);
 
 });
 
