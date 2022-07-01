@@ -13,6 +13,7 @@ class User extends Model {
 	const SECRET = "HcodePhp7_Secret";
 	const ERROR = "UserError";
 	const ERROR_REGISTER = "UserErrorRegister";
+	const SUCCESS = "UserSUCCESS";
 
 	public static function getFromSession() 
 	{
@@ -245,16 +246,16 @@ class User extends Model {
 		$sql = new Sql();
 		
 		$results = $sql->select("
-		 SELECT *
-		 FROM tb_userspasswordsrecoveries a
-		 INNER JOIN tb_users b USING(iduser)
-		 INNER JOIN tb_persons c USING(idperson)
-		 WHERE
-		 a.idrecovery = :idrecovery
-		 AND
-		 a.dtrecovery IS NULL
-		 AND
-		 DATE_ADD(a.dtregister, INTERVAL 1 HOUR) >= NOW();
+			SELECT *
+			FROM tb_userspasswordsrecoveries a
+			INNER JOIN tb_users b USING(iduser)
+			INNER JOIN tb_persons c USING(idperson)
+			WHERE
+			a.idrecovery = :idrecovery
+			AND
+			a.dtrecovery IS NULL
+			AND
+			DATE_ADD(a.dtregister, INTERVAL 1 HOUR) >= NOW();
 		", array(
 		 ":idrecovery"=>$idrecovery
 		));
@@ -305,6 +306,25 @@ class User extends Model {
 	public static function clearError() 
 	{
 		$_SESSION[User::ERROR] = NULL;
+	}
+
+	public static function setSuccess($msg) 
+	{
+		$_SESSION[User::SUCCESS] = $msg;
+	}
+
+	public static function getSuccess() 
+	{
+		$msg = (isset($_SESSION[User::SUCCESS]) && $_SESSION[User::SUCCESS]) ? $_SESSION[User::SUCCESS] : '';
+
+		User::clearSuccess();
+
+		return $msg;
+	}
+	
+	public static function clearSuccess() 
+	{
+		$_SESSION[User::SUCCESS] = NULL;
 	}
 
 	public static function setErrorRegister($msg)
