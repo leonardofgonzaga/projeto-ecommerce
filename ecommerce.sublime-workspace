@@ -247,6 +247,89 @@
 	},
 	"buffers":
 	[
+		{
+			"contents": "<div class=\"product-big-title-area\">\n\t<div class=\"container\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-md-12\">\n\t\t\t\t<div class=\"product-bit-title text-center\">\n\t\t\t\t\t<h2>Pagamento</h2>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n<div class=\"single-product-area\">\n\t<div class=\"zigzag-bottom\"></div>\n\t<div class=\"container\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-md-12\">\n\t\t\t\t<div class=\"product-content-right\">\n\t\t\t\t\t<form action=\"/checkout\" class=\"checkout\" method=\"post\" name=\"checkout\">\n\t\t\t\t\t\t<div id=\"customer_details\" class=\"col2-set\">\n\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t<div class=\"col-md-12\">\n\n\t\t\t\t\t\t\t\t\t<div class=\"alert alert-danger\">\n\t\t\t\t\t\t\t\t\t\tError!\n\t\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t\t<div class=\"woocommerce-billing-fields\">\n\t\t\t\t\t\t\t\t\t\t<h3>Endereço de entrega</h3>\n\t\t\t\t\t\t\t\t\t\t<p id=\"billing_address_1_field\" class=\"form-row form-row-wide address-field validate-required\">\n\t\t\t\t\t\t\t\t\t\t\t<label class=\"\" for=\"billing_address_1\">Cep <abbr title=\"required\" class=\"required\">*</abbr>\n\t\t\t\t\t\t\t\t\t\t\t</label>\n                                            <input type=\"text\" value=\"{$cart.deszipcode}\" placeholder=\"00000-000\" id=\"billing_address_1\" name=\"zipcode\" class=\"input-text \">\n                                            <input type=\"submit\" value=\"Atualizar CEP\" id=\"place_order\" class=\"button alt\" formaction=\"/checkout\" formmethod=\"get\">\n\t\t\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t\t\t<p id=\"billing_address_1_field\" class=\"form-row form-row-wide address-field validate-required\">\n\t\t\t\t\t\t\t\t\t\t\t<label class=\"\" for=\"billing_address_1\">Endereço <abbr title=\"required\" class=\"required\">*</abbr>\n\t\t\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" value=\"{$address.desaddress}\" placeholder=\"Logradouro, número e bairro\" id=\"billing_address_1\" name=\"desaddress\" class=\"input-text \">\n\t\t\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t\t\t<p id=\"billing_address_2_field\" class=\"form-row form-row-wide address-field\">\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" value=\"{$address.descomplement}\" placeholder=\"Complemento (opcional)\" id=\"billing_address_2\" name=\"descomplement\" class=\"input-text \">\n                                        </p>\n                                        <p id=\"billing_district_field\" class=\"form-row form-row-wide address-field validate-required\" data-o_class=\"form-row form-row-wide address-field validate-required\">\n\t\t\t\t\t\t\t\t\t\t\t<label class=\"\" for=\"billing_district\">Bairro <abbr title=\"required\" class=\"required\">*</abbr>\n\t\t\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" value=\"{$address.desdistrict}\" placeholder=\"Cidade\" id=\"billing_district\" name=\"desdistrict\" class=\"input-text \">\n\t\t\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t\t\t<p id=\"billing_city_field\" class=\"form-row form-row-wide address-field validate-required\" data-o_class=\"form-row form-row-wide address-field validate-required\">\n\t\t\t\t\t\t\t\t\t\t\t<label class=\"\" for=\"billing_city\">Cidade <abbr title=\"required\" class=\"required\">*</abbr>\n\t\t\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" value=\"{$address.descity}\" placeholder=\"Cidade\" id=\"billing_city\" name=\"descity\" class=\"input-text \">\n\t\t\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t\t\t<p id=\"billing_state_field\" class=\"form-row form-row-first address-field validate-state\" data-o_class=\"form-row form-row-first address-field validate-state\">\n\t\t\t\t\t\t\t\t\t\t\t<label class=\"\" for=\"billing_state\">Estado</label>\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" id=\"billing_state\" name=\"desstate\" placeholder=\"Estado\" value=\"{$address.desstate}\" class=\"input-text \">\n\t\t\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t\t\t<p id=\"billing_state_field\" class=\"form-row form-row-first address-field validate-state\" data-o_class=\"form-row form-row-first address-field validate-state\">\n\t\t\t\t\t\t\t\t\t\t\t<label class=\"\" for=\"billing_state\">País</label>\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" id=\"billing_state\" name=\"descountry\" placeholder=\"País\" value=\"{$address.descountry}\" class=\"input-text \">\n\t\t\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t\t\t\t\t\t\t<h3 id=\"order_review_heading\" style=\"margin-top:30px;\">Detalhes do Pedido</h3>\n\t\t\t\t\t\t\t\t\t\t<div id=\"order_review\" style=\"position: relative;\">\n\t\t\t\t\t\t\t\t\t\t\t<table class=\"shop_table\">\n\t\t\t\t\t\t\t\t\t\t\t\t<thead>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<th class=\"product-name\">Produto</th>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<th class=\"product-total\">Total</th>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t\t\t\t\t\t</thead>\n\t\t\t\t\t\t\t\t\t\t\t\t<tbody>\n                                                    \n\t\t\t\t\t\t\t\t\t\t\t\t\t<tr class=\"cart_item\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td class=\"product-name\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tShip Your Idea <strong class=\"product-quantity\">× 1</strong> \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td class=\"product-total\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"amount\">$700.00</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</td>\n                                                    </tr>\n                                                    \n\t\t\t\t\t\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t\t\t\t\t\t\t<tfoot>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<tr class=\"cart-subtotal\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<th>Subtotal</th>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td><span class=\"amount\">$700.00</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<tr class=\"shipping\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<th>Frete</th>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t$5.00\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"hidden\" class=\"shipping_method\" value=\"free_shipping\" id=\"shipping_method_0\" data-index=\"0\" name=\"shipping_method[0]\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<tr class=\"order-total\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<th>Total do Pedido</th>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td><strong><span class=\"amount\">$705.00</span></strong> </td>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t\t\t\t\t\t</tfoot>\n\t\t\t\t\t\t\t\t\t\t\t</table>\n\t\t\t\t\t\t\t\t\t\t\t<div id=\"payment\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"form-row place-order\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"submit\" data-value=\"Place order\" value=\"Continuar\" id=\"place_order\" name=\"woocommerce_checkout_place_order\" class=\"button alt\">\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</form>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>",
+			"file": "views/checkout.html",
+			"file_size": 5772,
+			"file_write_time": 133010990741774604,
+			"settings":
+			{
+				"buffer_size": 5766,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					5,
+					1,
+					"insert",
+					{
+						"characters": "b"
+					},
+					"AQAAAOEAAAAAAAAA4gAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA4QAAAAAAAADhAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					6,
+					1,
+					"left_delete",
+					null,
+					"AQAAAOEAAAAAAAAA4QAAAAAAAAABAAAAYg",
+					"AQAAAAAAAAABAAAA4gAAAAAAAADiAAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"contents": "<?php\n\nnamespace Hcode\\Model;\n\nuse \\Hcode\\Model;\nuse \\Hcode\\DB\\Sql;\n\nclass Address extends Model {\n\n\n\t\n}\n",
+			"file": "vendor/hcodebr/php-classes/src/Model/Address.php",
+			"file_size": 112,
+			"file_write_time": 133011002519958278,
+			"settings":
+			{
+				"buffer_size": 105,
+				"line_ending": "Windows"
+			},
+			"undo_stack":
+			[
+				[
+					5,
+					1,
+					"insert",
+					{
+						"characters": "\n\n"
+					},
+					"AgAAAGMAAAAAAAAAZAAAAAAAAAAAAAAAZAAAAAAAAABlAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAYwAAAAAAAABjAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					6,
+					1,
+					"reindent",
+					null,
+					"AQAAAGUAAAAAAAAAZgAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAZQAAAAAAAABlAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					7,
+					1,
+					"insert",
+					{
+						"characters": "sdfgdsfg"
+					},
+					"CAAAAGYAAAAAAAAAZwAAAAAAAAAAAAAAZwAAAAAAAABoAAAAAAAAAAAAAABoAAAAAAAAAGkAAAAAAAAAAAAAAGkAAAAAAAAAagAAAAAAAAAAAAAAagAAAAAAAABrAAAAAAAAAAAAAABrAAAAAAAAAGwAAAAAAAAAAAAAAGwAAAAAAAAAbQAAAAAAAAAAAAAAbQAAAAAAAABuAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAZgAAAAAAAABmAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					8,
+					8,
+					"left_delete",
+					null,
+					"CAAAAG0AAAAAAAAAbQAAAAAAAAABAAAAZ2wAAAAAAAAAbAAAAAAAAAABAAAAZmsAAAAAAAAAawAAAAAAAAABAAAAc2oAAAAAAAAAagAAAAAAAAABAAAAZGkAAAAAAAAAaQAAAAAAAAABAAAAZ2gAAAAAAAAAaAAAAAAAAAABAAAAZmcAAAAAAAAAZwAAAAAAAAABAAAAZGYAAAAAAAAAZgAAAAAAAAABAAAAcw",
+					"AQAAAAAAAAABAAAAbgAAAAAAAABuAAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -298,10 +381,14 @@
 	[
 		"/C/ecommerce",
 		"/C/ecommerce/vendor",
-		"/C/ecommerce/views"
+		"/C/ecommerce/vendor/hcodebr",
+		"/C/ecommerce/vendor/hcodebr/php-classes",
+		"/C/ecommerce/vendor/hcodebr/php-classes/src",
+		"/C/ecommerce/vendor/hcodebr/php-classes/src/Model"
 	],
 	"file_history":
 	[
+		"/C/ecommerce/views/forgot-reset.html",
 		"/C/ecommerce/vendor/hcodebr/php-classes/src/Model/Category.php",
 		"/D/Leonardo/Dev/php/index.php",
 		"/C/ecommerce/vendor/hcodebr/php-classes/src/Model.php",
@@ -428,8 +515,7 @@
 		"/C/xampp/htdocs/variaveis/escopo-de-variavel.php",
 		"/C/xampp/htdocs/variaveis/variaveis-pre-definidas.php",
 		"/C/xampp/htdocs/variaveis/tipos-de-dados.php",
-		"/C/xampp/htdocs/variaveis/concatenacao.php",
-		"/C/xampp/htdocs/variaveis/variaveis.php"
+		"/C/xampp/htdocs/variaveis/concatenacao.php"
 	],
 	"find":
 	{
@@ -489,6 +575,67 @@
 		{
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "views/checkout.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5766,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								503,
+								503
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "vendor/hcodebr/php-classes/src/Model/Address.php",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 105,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								100,
+								100
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -522,7 +669,7 @@
 			1.0
 		]
 	},
-	"menu_visible": true,
+	"menu_visible": false,
 	"output.find_results":
 	{
 		"height": 0.0
